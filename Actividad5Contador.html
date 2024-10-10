@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador con Botones</title>
+    <style>
+        /* Estilo general del body */
+        body {
+            font-family: 'Poppins', sans-serif; /* Define la fuente Poppins para todo el cuerpo */
+            display: flex; /* Usa flexbox para alinear el contenido */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            height: 100vh; /* Usa toda la altura de la ventana */
+            margin: 0; /* Elimina márgenes por defecto */
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Fondo con degradado de color */
+        }
+
+        /* Estilo para el contenedor del contenido */
+        .container {
+            text-align: center; /* Centra el texto dentro del contenedor */
+            background-color: white; /* Fondo blanco para el contenedor */
+            padding: 30px; /* Espaciado interno del contenedor */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor */
+        }
+
+        /* Estilo para el encabezado */
+        h1 {
+            font-size: 48px; /* Tamaño grande para el encabezado */
+            color: #333; /* Color gris oscuro para el texto */
+            margin-bottom: 20px; /* Espacio debajo del encabezado */
+        }
+
+        /* Estilo para los botones */
+        button {
+            padding: 15px 30px; /* Tamaño del botón */
+            font-size: 18px; /* Tamaño de texto en el botón */
+            color: white; /* Texto blanco en los botones */
+            background-color: #ff758c; /* Fondo rosado para los botones */
+            border: none; /* Sin bordes en los botones */
+            border-radius: 10px; /* Bordes redondeados en los botones */
+            cursor: pointer; /* Cambio de cursor cuando pasa sobre el botón */
+            transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+            margin: 10px; /* Espacio entre los botones */
+        }
+
+        /* Estilo para el efecto hover (cuando el usuario pasa el mouse por encima del botón) */
+        button:hover {
+            background-color: #e84060; /* Cambio de color de fondo al pasar el mouse */
+        }
+
+        /* Estilo específico para el contador */
+        #contador {
+            color: #ff758c; /* Color rosado para el texto del contador */
+            font-weight: bold; /* Texto en negrita para resaltar el contador */
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Título y contador visual -->
+        <h1>Contador: <span id="contador">0</span></h1>
+        <!-- Botones para incrementar y decrementar el contador -->
+        <button id="subirparriba">Subir</button>
+        <button id="bajarparaabajo">Bajar</button>
+    </div>
+
+    <script>
+        // Inicializar el contador con un valor de 0
+        let contador = 0;
+
+        // Obtener los elementos del DOM (documento HTML) para usarlos en el código
+        let contadorElemento = document.getElementById("contador"); // El span donde se muestra el contador
+        let botonSubir = document.getElementById("subirparriba"); // El botón de "Subir"
+        let botonBajar = document.getElementById("bajarparaabajo"); // El botón de "Bajar"
+
+        // Evento para incrementar el contador cuando se hace clic en el botón "Subir"
+        botonSubir.addEventListener("click", function() {
+            contador++; // Aumenta el valor del contador en 1
+            contadorElemento.textContent = contador; // Actualiza el texto del contador en la página
+        });
+
+        // Evento para decrementar el contador cuando se hace clic en el botón "Bajar"
+        botonBajar.addEventListener("click", function() {
+            contador--; // Disminuye el valor del contador en 1
+            contadorElemento.textContent = contador; // Actualiza el texto del contador en la página
+        });
+    </script>
+</body>
+</html>
